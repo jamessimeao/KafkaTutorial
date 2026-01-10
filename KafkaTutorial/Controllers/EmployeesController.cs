@@ -40,9 +40,20 @@ namespace KafkaTutorial.Controllers
             };
 
             dbContext.Employees.Add(employee);
+
             await dbContext.SaveChangesAsync();
 
-            return Created();
+            // At least for in memory database, after dbContext.Employees.Add(employee)
+            // the employee has the Id that was stored in the database, so we can return it.
+
+            return CreatedAtAction(
+                nameof(GetEmployee),
+                new
+                {
+                    Id = employee.Id,
+                },
+                employee
+                );
         }
     }
 }
