@@ -18,6 +18,18 @@ namespace KafkaTutorial.Controllers
             return Ok(employees);
         }
 
+        [HttpGet("{id}")]
+        public async Task<ActionResult<Employee?>> GetEmployee(int id)
+        {
+            Employee? employee = await dbContext.FindAsync<Employee>(id);
+            if (employee == null)
+            {
+                return NotFound();
+            }
+
+            return Ok(employee);
+        }
+
         [HttpPost("{name}/{surname}")]
         public async Task<ActionResult> CreateEmployee(string name, string surname)
         {
