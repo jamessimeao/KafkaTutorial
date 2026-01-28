@@ -4,7 +4,7 @@ namespace ConfluentTutorialProducer
 {
     internal class Program
     {
-        const int kafkaPort = 9092;
+        private const int kafkaPort = 9092;
 
         public static void Main(string[] args)
         {
