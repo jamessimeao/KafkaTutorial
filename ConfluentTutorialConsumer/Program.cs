@@ -1,5 +1,7 @@
 ﻿using Confluent.Kafka;
 
+// From https://developer.confluent.io/get-started/dotnet/
+
 namespace ConfluentTutorialConsumer
 {
     internal class Program
