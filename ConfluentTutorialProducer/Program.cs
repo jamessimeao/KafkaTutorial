@@ -6,7 +6,7 @@ namespace ConfluentTutorialProducer
 {
     internal class Program
     {
-        private const int kafkaPort = 9092;
+        private const int PlaintextPort = 34205;
 
         public static void Main(string[] args)
         {
@@ -18,7 +18,7 @@ namespace ConfluentTutorialProducer
             var config = new ProducerConfig()
             {
                 // User-specific properties that you must set
-                BootstrapServers = $"localhost:{kafkaPort}",
+                BootstrapServers = $"localhost:{PlaintextPort}",
                 // Fixed properties
                 Acks = Acks.All,
             };

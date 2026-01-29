@@ -6,14 +6,14 @@ namespace ConfluentTutorialConsumer
 {
     internal class Program
     {
-        private const int kafkaPort = 9092;
+        private const int PlaintextPort = 34205;
 
         public static void Main(string[] args)
         {
             var config = new ConsumerConfig()
             {
                 // User-specific properties that you must set
-                BootstrapServers = $"localhost:{kafkaPort}",
+                BootstrapServers = $"localhost:{PlaintextPort}",
 
                 // Fixed properties
                 GroupId = "kafka-dotnet-getting-started",
